@@ -1,4 +1,4 @@
-# Preservica_Ingest_Folder_Structure
+# Preservica Ingest Folder Structure
 
 This is a script to organise files into Preservica's multiple manifestation folder structure prior to ingest
 

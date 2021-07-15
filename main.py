@@ -8,7 +8,7 @@ prsn2 = 'Preservica_presentation2_lnk'
 prsn3 = 'Preservica_presentation3_lnk'
 
 # Global variables defining format types
-prsv_fmts = ['dng','tif', 'avi', 'mkv' 'wav']
+prsv_fmts = ['dng','tif', 'avi', 'mkv', 'wav']
 prsn_fmts = ['jpg', 'jpeg']
 
 # Gets source path from user
@@ -72,9 +72,9 @@ def main():
             elif folder_nos == [1, 1]:
                 if not os.path.exists(prsv1):
                     os.mkdir(prsv1)
-                if file.endswith('dng'):
+                if file.endswith(tuple(prsv_fmts)):
                     move(os.path.join(root, file), os.path.join(root, new_dir, prsv1))
-                if not os.path.exists(tuple(prsv_fmts)):
+                if not os.path.exists(prsn2):
                     os.mkdir(prsn2)
                 if file.endswith(tuple(prsn_fmts)):
                     move(os.path.join(root, file), os.path.join(root, new_dir, prsn2))

@@ -24,7 +24,7 @@ PRSN_FMTS = ['jpg', 'jpeg']
 
 # Setup logging (running from bk-qnap-video)
 LOGGER = logging.getLogger('main')
-HDLR = logging.FileHandler(os.path.join('main.log'))
+HDLR = logging.FileHandler(os.path.join(LOG, 'main.log'))
 FORMATTER = logging.Formatter('%(asctime)s\t%(levelname)s\t%(message)s')
 HDLR.setFormatter(FORMATTER)
 LOGGER.addHandler(HDLR)
@@ -43,7 +43,7 @@ def get_path():
         LOGGER.info("Path successfully retrieved: %s", root)
         return root
     except FileNotFoundError:
-        LOGGER.info("File path was not valid: %s", root)
+        LOGGER.warning("File path was not valid: %s", root)
         print("Path not valid, please try again.")
         raise TryAgain
 
